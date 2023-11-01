@@ -14,7 +14,7 @@ const calculate = (btnValue) => {
   } else {
     if (output === "" && specialChars.includes(btnValue)) return;
     output += btnValue;
-    output = Math.floor();
+    output = Math.floor(output);
   }
   display.value = output;
 };
