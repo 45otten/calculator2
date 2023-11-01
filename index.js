@@ -5,9 +5,14 @@ let output = "";
 
 const calculate = (btnValue) => {
   display.focus();
+
   if (btnValue === "=" && output !== "") {
-    output = eval(output.replace("%", "/100"));
-    output = parseFloat(output).toFixed(3);
+    try {
+      output = eval(output.replace(/%/g, '/100'));
+      output = parseFloat(output).toFixed(3);
+    } catch (error) {
+      output = "Error";
+    }
   } else if (btnValue === "AC") {
     output = "";
   } else if (btnValue === "DEL") {
@@ -18,6 +23,7 @@ const calculate = (btnValue) => {
   }
   display.value = output;
 };
+
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => calculate(e.target.dataset.value));
 });
