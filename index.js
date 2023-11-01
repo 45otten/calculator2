@@ -11,7 +11,7 @@ const calculate = (btnValue) => {
       for (let i = 0; i < parts.length; i++) {
         if (parts[i].includes('%')) {
           // Replace '%' with '/100' within the part
-          parts[i] = parts[i].replace(/%/g, '/100');
+          parts[i] = parts[i].replace(/%/g, '/100*');
         }
       }
       output = parts.join('');
