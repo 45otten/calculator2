@@ -6,7 +6,7 @@ let output = "";
 const calculate = (btnValue) => {
   display.focus();
   if (btnValue === "=" && output !== "") {
-    output = eval(output.replace("%", "/100*"));
+    output = eval(output.replace("%", "/100"));
   } else if (btnValue === "AC") {
     output = "";
   } else if (btnValue === "DEL") {
@@ -14,6 +14,7 @@ const calculate = (btnValue) => {
   } else {
     if (output === "" && specialChars.includes(btnValue)) return;
     output += btnValue;
+    output = Math.floor();
   }
   display.value = output;
 };
