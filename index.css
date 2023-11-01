@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    background-image: url(Data-science-without-mathematics.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    border: 2px solid white;
+    backdrop-filter: blur(10px);
+    padding: 10px 20px 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: 0.9s;
+}
+.container:hover{
+    box-shadow: 0 0 10px 0 white;
+    transform: scaleY(-110px);
+}
+h3{
+    color: white;
+    pointer-events: none;
+}
+hr{
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius:5px ;
+}
+.display{
+    height: 60px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    outline: none;
+    /* border: 1px solid black; */
+    border: none;
+    /* border-radius: 10px; */
+    text-align: right;
+    margin-bottom:10px;
+    font-size: 25px;
+    pointer-events: none;
+    padding-right: 5px;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+}
+.buttons{
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns: repeat(4,1fr);
+    /* border: 1px solid black; */
+    /* padding: 5px; */
+    border-radius: 10px;
+}
+.buttons button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 0 0 5px 0 white;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+}
+.buttons button:active{
+    transform: scale(0.99);
+
+}
+.operator{
+    color: blue !important;
+}
+.ACoper,.DELoper{
+    color: red !important;
+}
