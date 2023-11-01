@@ -9,7 +9,7 @@ const calculate = (btnValue) => {
   if (btnValue === "=" && output !== "") {
     try {
       output = eval(output.replace(/%/g, '/100'));
-      output = parseFloat(output).toFixed(3);
+      //output = parseFloat(output).toFixed(3);
     } catch (error) {
       output = "Error";
     }
