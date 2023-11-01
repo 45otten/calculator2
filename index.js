@@ -6,27 +6,21 @@ let output = "";
 const calculate = (btnValue) => {
   display.focus();
   if (btnValue === "=" && output !== "") {
-    if (output.includes('%')) {
-      const parts = output.split(/([+-])/);
-      for (let i = 0; i < parts.length; i++) {
-        if (parts[i].includes('%')) {
-          // Replace '%' with '/100' within the part
-          parts[i] = parts[i].replace(/%/g, '/100*');
-        }
-      }
-      output = parts.join('');
-    }
-    output = eval(output);
+    output = eval(output.replace("%", "/100*"));
   } else if (btnValue === "AC") {
     output = "";
   } else if (btnValue === "DEL") {
     output = output.toString().slice(0, -1);
   } else {
+    //If output is empty and button is specialChars then return
     if (output === "" && specialChars.includes(btnValue)) return;
     output += btnValue;
   }
   display.value = output;
 };
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => calculate(e.target.dataset.value));
+});
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => calculate(e.target.dataset.value));
