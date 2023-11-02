@@ -56,6 +56,7 @@ hr{
     background-color: transparent;
     border-bottom: 1px solid white;
     color: white;
+    overflow-x: scroll;
 }
 .buttons{
     display: grid;
