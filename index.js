@@ -1,6 +1,6 @@
 const display = document.querySelector(".display");
 const buttons = document.querySelectorAll("button");
-const specialchars =["%","*","/","-","+","="];
+const specialChars = ["%", "*", "/", "-", "+", "="];
 let output = "";
 const calculate=(btnValue)=>{
     if(btnValue === "="&& output!==""){output = eval(output.replace("%","/100*"));}
